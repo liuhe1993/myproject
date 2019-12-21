@@ -32,7 +32,7 @@ public class InfoFlowView extends InfoFlowBaseView implements DownloadObserver<S
     protected void onFinishInflate() {
         super.onFinishInflate();
         // TODO: 2019/4/5 设置监听
-        mTitle = findViewById(R.id.tile);
+//        mTitle = findViewById(R.id.tile);
         DownlodManager.getInstance().registerObserver(this);
 
     }

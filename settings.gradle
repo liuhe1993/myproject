@@ -1,1 +1,1 @@
-include ':app', ':newsfeed', ':common_base', ':plugin'
+include ':app', ':newsfeed', ':common_base', ':plugin', ':network'
