@@ -3,7 +3,9 @@
     package="com.eric.newsfeed">
 
     <application>
-        <activity android:name="com.eric.module.MainActivity"></activity>
+        <activity android:name=".NewsFeedActivity">
+
+        </activity>
     </application>
 
 </manifest>

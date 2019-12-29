@@ -11,7 +11,7 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
@@ -34,15 +34,21 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["gson"]
-    implementation rootProject.ext.dependencies["support-annotations"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
+    api rootProject.ext.dependencies["retrofit-converter-gson"]
+    api rootProject.ext.dependencies["arouter-api"]
+    api rootProject.ext.dependencies["annotations"]
 
-    def my_room_version = "1.1.1"
-    implementation "android.arch.persistence.room:runtime:$my_room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$my_room_version"
+    def my_room_version = '2.0.0-beta01'
+    implementation "androidx.room:room-runtime:$my_room_version"
+    annotationProcessor "androidx.room:room-compiler:$my_room_version"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }
