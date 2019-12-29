@@ -12,27 +12,36 @@
     ]
 
      version = [
-             androidSupportSdkVersion       : "28.0.0",
-             constraintVersion              : "1.1.3",
-             glideVersion                   : "3.7.0"
+             androidxSdkVersion             : '1.0.0-beta01',
+             constraintVersion              : '1.1.2',
+             glideVersion                   : '3.7.0',
+             butterknife                    : '8.8.1'
      ]
 
      dependencies = [
-             //support
-             "appcompat-v7"                  : "com.android.support:appcompat-v7:${version['androidSupportSdkVersion']}",
-             "constraint-layout"             : "com.android.support.constraint:constraint-layout:${version['constraintVersion']}",
-             "recyclerview-v7"               : "com.android.support:recyclerview-v7:28.0.0",
-             "support-annotations"           : "com.android.support:support-annotations:28.0.0",
+             // androidx
+             "appcompat"                     : "androidx.appcompat:appcompat:${version['androidxSdkVersion']}",
+             "constraint-layout"             : "androidx.constraintlayout:constraintlayout:${version['constraintVersion']}",
+             "recyclerview"                  : "androidx.recyclerview:recyclerview:${version['androidxSdkVersion']}",
+             "annotations"                   : "androidx.annotation:annotation:${version['androidxSdkVersion']}",
 
              "glide"                         : "com.github.bumptech.glide:glide:${version['glideVersion']}",
 
-             "butterknife"                   : "com.jakewharton:butterknife:8.8.1",
-             "butterknife-compiler"          : "com.jakewharton:butterknife-compiler:8.8.1",
+             "butterknife"                   : "com.jakewharton:butterknife:${version['butterknife']}",
+             "butterknife-compiler"          : "com.jakewharton:butterknife-compiler:${version['butterknife']}",
 
              "arouter-api"                   : "com.alibaba:arouter-api:1.5.0",
              "arouter-compiler"              : "com.alibaba:arouter-compiler:1.2.2",
 
-             "gson"                          : 'com.google.code.gson:gson:2.8.4'
+             "rxjava"                        : "io.reactivex.rxjava2:rxjava:2.2.16",
+             "rxandroid"                     : "io.reactivex.rxjava2:rxandroid:2.1.1",
+
+
+             "gson"                          : "com.google.code.gson:gson:2.8.4",
+
+             "retrofit"                      : "com.squareup.retrofit2:retrofit:2.7.0",
+             "retrofit-converter-gson"       : "com.squareup.retrofit2:converter-gson:2.7.0",
+             "retrofit-adapter-rxjava2"      : "com.squareup.retrofit2:adapter-rxjava2:2.7.0",
      ]
 
 
