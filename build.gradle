@@ -7,13 +7,14 @@ buildscript {
            //artifactory本地仓库，可部署到服务器
            url "http://localhost:8081/artifactory/android_group"
        }
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.1'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.0'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // Dagger需要的apt插件（annotationProcessor是gradle已经内置了apt解析框架）
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
     }
 }
 

@@ -3,6 +3,8 @@ if (rootProject.ext.isNewsFeedApplication.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+// 使用了annotationProcessor就不用android-apt了，annotationProcessor是gradle已经内置了apt解析框架
+// apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -13,18 +15,20 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //作为独立app时的appid
         if (rootProject.ext.isNewsFeedApplication.toBoolean()) {
             applicationId "com.eric.newsfeed"
         }
 
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                //这里有个坑，还必须用'AROUTER_MODULE_NAME'来声明
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+        if (!rootProject.ext.isNewsFeedApplication) {
+            // 作为独立app时不需要arouter配置
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    //这里有个坑，还必须用'AROUTER_MODULE_NAME'来声明
+                    arguments = [AROUTER_MODULE_NAME: project.getName()]
+                }
             }
         }
     }
@@ -34,6 +38,8 @@ android {
             if (rootProject.ext.isNewsFeedApplication.toBoolean()) {
                 // 设置独立app依赖的manifest资源
                 manifest.srcFile "src/main/module/AndroidManifest.xml"
+                res.srcDirs = ["src/main/res","src/main/module/res"]
+                java.srcDirs = ["src/main/java", "src/main/module/java"]
             } else {
                 manifest.srcFile "src/main/AndroidManifest.xml"
                 java {
@@ -61,18 +67,17 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation rootProject.ext.dependencies["recyclerview-v7"]
-
-    implementation rootProject.ext.dependencies["arouter-api"]
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
     implementation project(':common_base')
-}
-repositories {
-    mavenCentral()
+
+    if (!rootProject.ext.isNewsFeedApplication) {
+        annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    }
 }

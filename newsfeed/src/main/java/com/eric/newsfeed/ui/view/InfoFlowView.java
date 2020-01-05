@@ -1,15 +1,17 @@
-package com.eric.newsfeed.ui;
+package com.eric.newsfeed.ui.view;
 
 import android.content.Context;
-import android.os.Looper;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
+
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eric.base.database.InfoFlowRecord;
-import com.eric.newsfeed.R;
 import com.eric.newsfeed.observer.DownloadObserver;
 import com.eric.newsfeed.observer.DownlodManager;
+import com.eric.newsfeed.ui.view.InfoFlowBaseView;
 
 
 public class InfoFlowView extends InfoFlowBaseView implements DownloadObserver<String> {
@@ -22,6 +24,11 @@ public class InfoFlowView extends InfoFlowBaseView implements DownloadObserver<S
     
     public InfoFlowView(@NonNull Context context) {
         super(context);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     public void setRecord(InfoFlowRecord record) {

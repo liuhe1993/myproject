@@ -1,7 +1,7 @@
-package com.eric.newsfeed.ui;
+package com.eric.newsfeed.ui.view;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.widget.FrameLayout;
 import android.view.View;
 
@@ -12,12 +12,10 @@ public abstract class InfoFlowBaseView extends FrameLayout implements View.OnCli
     }
 
     @Override
-    public void onClick(View v) {
+    public abstract void onClick(View v);
 
-    }
-
-    @android.support.annotation.NonNull
-    public String removeVowels(@android.support.annotation.NonNull String S) {
+    @androidx.annotation.NonNull
+    public String removeVowels(@androidx.annotation.NonNull String S) {
         char[] charS = S.toCharArray();
         StringBuilder out = new StringBuilder();
         for (char aChar : charS) {

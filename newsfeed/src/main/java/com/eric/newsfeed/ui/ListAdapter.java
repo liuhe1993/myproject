@@ -10,7 +10,7 @@ public class ListAdapter extends BaseAdapter {
         return 0;
     }
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     @Override
     public Object getItem(int position) {
         return null;
@@ -21,7 +21,7 @@ public class ListAdapter extends BaseAdapter {
         return 0;
     }
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         return null;

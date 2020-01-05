@@ -43,6 +43,7 @@ dependencies {
     api rootProject.ext.dependencies["retrofit-converter-gson"]
     api rootProject.ext.dependencies["arouter-api"]
     api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["dagger"]
 
     def my_room_version = '2.0.0-beta01'
     implementation "androidx.room:room-runtime:$my_room_version"
