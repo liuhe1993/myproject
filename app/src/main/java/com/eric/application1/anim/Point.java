@@ -1,4 +1,4 @@
-package com.eric.application1;
+package com.eric.application1.anim;
 
 public class Point {
     //记录坐标位置

@@ -1,15 +1,18 @@
-package com.eric.application1;
+package com.eric.application1.anim;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 
+/**
+ * 自定义属性动画（小球运动效果）
+ */
 public class AnimationView extends View {
 
     //常量
@@ -34,7 +37,7 @@ public class AnimationView extends View {
     }
 
     @Override
-    protected void onDraw(@android.support.annotation.NonNull Canvas canvas) {
+    protected void onDraw(@androidx.annotation.NonNull Canvas canvas) {
         //第一次绘制时
         if (curPoint == null){
             //初始化坐标为(50f, 50f)
@@ -68,7 +71,7 @@ public class AnimationView extends View {
 
             //每当Point的值有改变的时候，都会调用onAnimationUpdate()方法
             @Override
-            public void onAnimationUpdate(@android.support.annotation.NonNull ValueAnimator animation) {
+            public void onAnimationUpdate(@androidx.annotation.NonNull ValueAnimator animation) {
                 //更新curPoint，即更新当前坐标
                 curPoint = (Point) animation.getAnimatedValue();
                 // 刷新，重现调用onDraw()方法

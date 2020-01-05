@@ -1,4 +1,4 @@
-package com.eric.application1;
+package com.eric.application1.anim;
 
 import android.animation.TypeEvaluator;
 
@@ -6,7 +6,7 @@ import android.animation.TypeEvaluator;
 public class PointEvaluator implements TypeEvaluator {
 
     //重写evaluate()方法
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     @Override
     public Object evaluate(float fraction, Object startValue, Object endValue) {
 
