@@ -2,9 +2,6 @@ package com.eric.base.sp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import java.io.*;
-import android.view.View;
-import android.view.ViewGroup;
 
 public class SPManager {
     private Context context;
@@ -22,7 +19,7 @@ public class SPManager {
 
    }
 
-   @android.support.annotation.Nullable
+   @androidx.annotation.Nullable
    public String getString(String key) {
           return sp.getString(key, "");
    }

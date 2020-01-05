@@ -23,7 +23,7 @@ public class BaseConfigServer {
         }
     }
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     static <U> Response<U> request(Context context, String url, Class<U> clazz, int retryTime) {
         Pair<Integer, String> ret = null;
         for(int i = 0; i < retryTime; i++){

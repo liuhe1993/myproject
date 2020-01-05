@@ -2,14 +2,11 @@ package com.eric.base.aidl;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
 
 import com.eric.base.IRequestCallback;
-
-import static android.content.Context.BIND_AUTO_CREATE;
 
 public class ClientAidlManager {
 
@@ -34,7 +31,7 @@ public class ClientAidlManager {
 
     private final Object lock = new Object();
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     private IRequestCallback callback = new IRequestCallback.Stub() {
         @Override
         public String request(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
@@ -42,10 +39,10 @@ public class ClientAidlManager {
         }
     };
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     private ServiceConnection connection = new ServiceConnection() {
         @Override
-        public void onServiceConnected(ComponentName name, @android.support.annotation.Nullable IBinder service) {
+        public void onServiceConnected(ComponentName name, @androidx.annotation.Nullable IBinder service) {
             synchronized (lock) {
                 if (service != null) {
                     myAidlInterface = IMyAidlInterface.Stub.asInterface(service);
@@ -62,7 +59,7 @@ public class ClientAidlManager {
 
 
 
-    public boolean bindService(@android.support.annotation.NonNull Context context) {
+    public boolean bindService(@androidx.annotation.NonNull Context context) {
 
         synchronized (lock) {
 //        Intent intent1 = new Intent(context.getApplicationContext(), MyService.class);

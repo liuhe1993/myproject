@@ -18,18 +18,18 @@ public class ConfigServer extends BaseConfigServer {
 
     }
 
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     Comparator<String> com2 = new Comparator<String>() {
         @Override
         public int compare(String o1, String o2) {
             return 0;
         }
     };
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     Comparator<String> com = (first, second)->first.length() - second.length();
     int i = com.compare("ss", "fgf");
     String id = ContextUtils.chooseOne("id","id2", "id3");
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     FanTest<String> fan = new FanTest<>();
     String te = fan.getId();
 }

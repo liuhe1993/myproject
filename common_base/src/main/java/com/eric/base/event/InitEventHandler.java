@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public  class InitEventHandler implements EventHandler {
     //允许同时运行的线程数量
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     private Semaphore semaphore = new Semaphore(2);
     @Override
     public void register() {

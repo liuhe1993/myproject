@@ -1,12 +1,14 @@
 package com.eric.base.database;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 import android.database.Cursor;
 
 @Entity(tableName = "info_flow_record")
 public class InfoFlowRecord {
+
+    public static final int NO_PIC_ITEM = 0;
 
     public static final int SINGLE_PIC_ITEM = 1;
 

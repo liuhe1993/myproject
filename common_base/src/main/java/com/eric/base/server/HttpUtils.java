@@ -23,7 +23,7 @@ public class HttpUtils {
         return exec(context, "POST", url, 20000);
     }
 
-    private static Pair<Integer, String> exec(@android.support.annotation.Nullable Context context, String method, @android.support.annotation.Nullable String url, int timeout) {
+    private static Pair<Integer, String> exec(@androidx.annotation.Nullable Context context, String method, @androidx.annotation.Nullable String url, int timeout) {
         if (context == null || url == null) {
             return new Pair<>(1, "invalid params");
         }

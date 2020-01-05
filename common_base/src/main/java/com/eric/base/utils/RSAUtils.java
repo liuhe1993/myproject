@@ -20,7 +20,7 @@ public class RSAUtils {
      * @param publicKeyStr
      * @return
      */
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     public static PublicKey keyStrToPublicKey(String publicKeyStr) {
         PublicKey publicKey = null;
         byte[] keyBytes = Base64.decode(publicKeyStr, BASE64_MODE);//未经过Base64编码的就省略，直接getBytes()

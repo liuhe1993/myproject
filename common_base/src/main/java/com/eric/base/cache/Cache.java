@@ -13,7 +13,7 @@ public abstract class Cache<T> {
 
     private CacheData<T> cacheData;
 
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     private Gson mGson = new Gson();
 
 
@@ -21,7 +21,7 @@ public abstract class Cache<T> {
         void clear();
         void putString(String key, String data);
         void putLong(String key, long data);
-        @android.support.annotation.NonNull
+        @androidx.annotation.NonNull
         String getString(String key);
         long getLong(String key);
     }
@@ -66,7 +66,7 @@ public abstract class Cache<T> {
         return cacheData.isValid();
     }
 
-    @android.support.annotation.Nullable
+    @androidx.annotation.Nullable
     public T getCache() {
         if (isValid()){
             return cacheData.data;

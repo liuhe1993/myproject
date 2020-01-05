@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +16,9 @@ import com.eric.base.R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+/**
+ * 自定义view（颜色渐变字体）
+ */
 public class ColorChangeTextView extends View {
     private static final String TAG = "ColorChangeTextView";
 

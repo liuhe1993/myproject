@@ -1,6 +1,5 @@
 package com.eric.application1.activity;
 
-import android.animation.ObjectAnimator;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PersistableBundle;
@@ -12,6 +11,7 @@ import android.widget.Button;
 
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.eric.application1.R;
 import com.eric.base.view.ColorChangeTextView;
 
@@ -28,19 +28,20 @@ public class MainActivity extends BaseActivity implements SurfaceHolder.Callback
     private SurfaceView surfaceView;
     private SurfaceHolder holder;
 
-//    @BindView(R.id.change_text_view)
-//    protected ColorChangeTextView mView;
+    @BindView(R.id.change_text_view)
+    protected ColorChangeTextView mView;
 
-//    @BindView(R.id.text_change_btn)
-//    protected Button mButton;
+    @BindView(R.id.text_change_btn)
+    protected Button mButton;
 
-//    @OnClick(R.id.text_change_btn)
-//    void change() {
-//        Log.i(TAG, "onlick text change");
-////        mView.setDirection(ColorChangeTextView.DIRECTION_LEFT);
-////        //只能主动去调view对应属性的set函数，需要在set函数里面去刷新
-////        ObjectAnimator.ofFloat(mView, "progress", 0,1).setDuration(2500).start();
-//    }
+    @OnClick(R.id.text_change_btn)
+    void change() {
+        Log.i(TAG, "onlick text change");
+//        mView.setDirection(ColorChangeTextView.DIRECTION_LEFT);
+//        //只能主动去调view对应属性的set函数，需要在set函数里面去刷新
+//        ObjectAnimator.ofFloat(mView, "progress", 0,1).setDuration(2500).start();
+        ARouter.getInstance().build("/newsfeed/NewsFeedActivity").navigation();
+    }
 
    private static Handler handler = new MyHandler();
 
@@ -62,7 +63,7 @@ public class MainActivity extends BaseActivity implements SurfaceHolder.Callback
         holder.addCallback(this);
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
-            public void uncaughtException(Thread t, @android.support.annotation.NonNull Throwable e) {
+            public void uncaughtException(Thread t, @androidx.annotation.NonNull Throwable e) {
                 Log.i("Main", e.getMessage());
             }
         });

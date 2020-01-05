@@ -1,7 +1,5 @@
 package com.eric.base.cache;
 
-import com.eric.base.database.InfoFlowRecord;
-
 import java.lang.reflect.Type;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -13,13 +11,13 @@ public class InfoFlowCache extends Cache<InfoFlow> {
         super(executor, validInterval, manager);
     }
 
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     @Override
     public Type getDataType() {
         return InfoFlow.class;
     }
 
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     @Override
     public InfoFlow getData() {
         InfoFlow infoFlow= new InfoFlow();

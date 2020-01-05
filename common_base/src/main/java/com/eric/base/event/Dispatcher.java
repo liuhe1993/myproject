@@ -8,7 +8,7 @@ public class Dispatcher {
 
     private Dispatcher() {}
 
-    @android.support.annotation.NonNull
+    @androidx.annotation.NonNull
     private Map<Event, EventHandler> eventHandlerMap = new ConcurrentHashMap<>();
 
     public Dispatcher getInstance() {
@@ -22,7 +22,7 @@ public class Dispatcher {
         return mInstance;
     }
 
-    public void register(@android.support.annotation.Nullable Event event, @android.support.annotation.Nullable EventHandler handler){
+    public void register(@androidx.annotation.Nullable Event event, @androidx.annotation.Nullable EventHandler handler){
         if (eventHandlerMap != null && event != null && handler != null) {
             eventHandlerMap.put(event, handler);
         }
