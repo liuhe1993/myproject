@@ -4,7 +4,7 @@
 
 项目目前已经更新了：
 
-1.Artifactory本地仓库构建
+1. Artifactory本地仓库构建
 
 [Artifactory搭建引导](https://www.jianshu.com/p/f86559447b8b)
 
